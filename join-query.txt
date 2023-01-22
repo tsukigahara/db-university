@@ -1,0 +1,42 @@
+1.
+SELECT * 
+FROM `students` 
+JOIN `degrees` 
+ON degrees.id = students.degree_id
+WHERE degrees.name LIKE 'Corso di Laurea in Economia';
+⁄⁄questions
+
+2.
+SELECT * 
+FROM `degrees`
+  JOIN `departments`
+    ON departments.id = degrees.department_id
+WHERE departments.name = 'Dipartimento di Neuroscienze'
+AND degrees.level = 'magistrale';
+
+3.
+SELECT * 
+FROM `course_teacher`
+  JOIN `teachers`
+    ON teachers.id = course_teacher.teacher_id
+    JOIN `courses`
+    ON courses.id = course_teacher.course_id
+WHERE teachers.id = 44;
+
+4.
+SELECT students.*, degrees.name, departments.name
+FROM `students`
+  JOIN `degrees`
+    ON degrees.id = students.degree_id
+    JOIN `departments`
+    ON departments.id = degrees.department_id
+ORDER BY students.surname, students.name ASC;
+
+5.
+
+6.
+
+7.
+
+
+
